@@ -9,7 +9,7 @@ const Greet = () => {
         borderRadius: "8px",
         color: "#333",
       }}>
-      <h1>Hello, Greet!</h1>
+      <h1>Greet!</h1>
     </div>
   );
 };

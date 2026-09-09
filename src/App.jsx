@@ -1,11 +1,15 @@
 import "./App.css";
 import Greet from "./comps/Greet";
+import Navbar from "./comps/Navbar";
+import Footer from "./comps/Footer";
+import Main from "./comps/Main";
 
 function App() {
   return (
     <>
-      <h1>Hello, Vite!</h1>
-      <Greet />
+      <Navbar />
+      <Main />
+      <Footer />
     </>
   );
 }
