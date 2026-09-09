@@ -7,12 +7,14 @@ import Welcome from "./comps/Welcome";
 
 function App() {
   const numbers = [1, 2, 3, 4, 5];
+  const name = "John Doe";
   return (
     <>
       <Navbar />
       <Main />
       <Welcome />
       <p>{2 + 2}</p>
+      {name === "John Doe" ? <p>Hello, {name}!</p> : <p>Hello, Guest!</p>}
       <h3>Numbers:</h3>
       {numbers.map((number) => (
         <p key={number}>{number}</p>
