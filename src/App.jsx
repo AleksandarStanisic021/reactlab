@@ -6,7 +6,21 @@ const App = () => {
     { name: "Bob", age: 30 },
     { name: "Charlie", age: 35 },
   ];
-  const [friendList, setFriendList] = React.useState([]);
+  const [friendList, setFriendList] = React.useState([
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 30 },
+    { name: "Charlie", age: 35 },
+  ]);
+
+  function modifyFriend() {
+    const updatedFriends = friendList.map((friend) => {
+      if (friend.name === "Alice") {
+        return { ...friend, name: "Alice Smith", age: friend.age + 1 }; // Increment Alice's age by 1 and update her name
+      }
+      return friend;
+    });
+    setFriendList(updatedFriends);
+  }
 
   return (
     <div>
@@ -23,6 +37,14 @@ const App = () => {
         }}>
         Add friend
       </button>
+      <button
+        onClick={() => {
+          setFriendList(friendList.slice(0, -1));
+        }}>
+        Remove friend
+      </button>
+      <button onClick={modifyFriend}> Modify friend</button>
+
       {friendList.map((friend, index) => (
         <div key={index}>
           {friend.name} - {friend.age} years old
