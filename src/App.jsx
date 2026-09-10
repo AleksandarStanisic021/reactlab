@@ -1,22 +1,15 @@
 import "./App.css";
 
+import React from "react";
+import Product from "./comps/Product";
+
 function App() {
   return (
     <>
       <h1>Props</h1>
-      <User name="John" age={30} />
+      <Product name="Laptop" price={999.99} />
     </>
   );
 }
-
-const User = (props) => {
-  const { name, age } = props;
-  return (
-    <>
-      <h1>My name is {name}</h1>
-      <h2>My age is {age}</h2>
-    </>
-  );
-};
 
 export default App;
