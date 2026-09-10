@@ -10,11 +10,6 @@ function App() {
 
   return (
     <>
-      <h1>Card</h1>
-      <div>
-        <FaShoppingCart />
-        <Button />
-      </div>
       <p>Button clicked {count} times</p>
       <div>
         <button
