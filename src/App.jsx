@@ -1,31 +1,35 @@
-import { FaBeer } from "react-icons/fa";
-import { TbAccessible } from "react-icons/tb";
-import { FaShoppingCart } from "react-icons/fa";
-import Button from "./comps/Button";
+import React from "react";
 
-import { useState } from "react";
-
-function App() {
-  const [count, setCount] = useState(0);
+const App = () => {
+  const friends = [
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 30 },
+    { name: "Charlie", age: 35 },
+  ];
+  const [friendList, setFriendList] = React.useState([]);
 
   return (
-    <>
-      <p>Button clicked {count} times</p>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "16px",
-          backgroundColor: "#02124d",
-          padding: "16px",
-          borderRadius: "8px",
+    <div>
+      <h1>Hello, World!</h1>
+      {friends.map((friend, index) => (
+        <div key={index}>
+          {friend.name} - {friend.age} years old
+        </div>
+      ))}
+      <button
+        onClick={() => {
+          const newFriend = { name: "New Friend", age: 20 };
+          setFriendList([...friendList, newFriend]);
         }}>
-        <button style={{ width: "100px" }} onClick={() => setCount(count + 1)}>
-          Click Me
-        </button>
-      </div>
-    </>
+        Add friend
+      </button>
+      {friendList.map((friend, index) => (
+        <div key={index}>
+          {friend.name} - {friend.age} years old
+        </div>
+      ))}
+    </div>
   );
-}
+};
+
 export default App;
