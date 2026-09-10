@@ -10,10 +10,11 @@ function App() {
 }
 
 const User = (props) => {
+  const { name, age } = props;
   return (
     <>
-      <h1>My name is {props.name}</h1>
-      <h2>My age is {props.age}</h2>
+      <h1>My name is {name}</h1>
+      <h2>My age is {age}</h2>
     </>
   );
 };
