@@ -11,10 +11,17 @@ function App() {
   return (
     <>
       <p>Button clicked {count} times</p>
-      <div>
-        <button
-          style={{ marginTop: "16px", width: "100px" }}
-          onClick={() => setCount(count + 1)}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "16px",
+          backgroundColor: "#02124d",
+          padding: "16px",
+          borderRadius: "8px",
+        }}>
+        <button style={{ width: "100px" }} onClick={() => setCount(count + 1)}>
           Click Me
         </button>
       </div>
