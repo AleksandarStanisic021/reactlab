@@ -51,6 +51,7 @@ const App = () => {
               setMovies([
                 ...movies,
                 {
+                  key: movies.length + 1,
                   id: movies.length + 1,
                   title: "New Movie",
                   releaseYear: 2020,
