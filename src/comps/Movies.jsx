@@ -26,8 +26,9 @@ const Movies = () => {
         <div key={m.id}>
           <p>Title: {m.title}</p>
           <p>Release Year: {m.releaseYear}</p>
-          button
+
           <button
+            type="button"
             onClick={() =>
               setMovies(
                 movies.map((movie) =>
@@ -40,18 +41,19 @@ const Movies = () => {
             Update Title
           </button>
           <button
+            type="button"
             onClick={() =>
               setMovies(movies.filter((movie) => movie.id !== m.id))
             }>
             Delete Movie
           </button>
           <button
+            type="button"
             onClick={() =>
               setMovies([
                 ...movies,
                 {
-                  key: Math.random(),
-                  id: movies.length + 1,
+                  id: Date.now(),
                   title: "New Movie",
                   releaseYear: 2020,
                 },
