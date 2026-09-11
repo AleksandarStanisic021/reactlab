@@ -3,7 +3,7 @@ import ExampleOne from "./comps/ExampleOne";
 const App = () => {
   return (
     <div>
-      <ExampleOne />
+      <p>Hello, World! </p>
     </div>
   );
 };
