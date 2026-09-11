@@ -1,11 +1,6 @@
 import React from "react";
 
 const Movies = () => {
-  const [movie, setMovie] = React.useState({
-    title: "Inception",
-    releaseYear: 2010,
-  });
-
   const [movies, setMovies] = React.useState([
     { id: 1, title: "Inception", releaseYear: 2010 },
     { id: 2, title: "The Dark Knight", releaseYear: 2008 },
@@ -13,15 +8,6 @@ const Movies = () => {
   ]);
   return (
     <>
-      <h1>Hello, World!</h1>
-      <p>Title: {movie.title}</p>
-      <p>Release Year: {movie.releaseYear}</p>
-      <button
-        onClick={() =>
-          setMovie({ ...movie, title: "The Matrix", releaseYear: 1999 })
-        }>
-        Change Movie
-      </button>
       {movies.map((m) => (
         <div key={m.id}>
           <p>Title: {m.title}</p>

@@ -1,5 +1,6 @@
 import React from "react";
 import Movies from "./comps/Movies";
+import ExampleOne from "./comps/ExampleOne";
 
 const App = () => {
   const [movie, setMovie] = React.useState({
@@ -16,6 +17,7 @@ const App = () => {
   return (
     <div>
       <Movies />
+      <ExampleOne />
     </div>
   );
 };
