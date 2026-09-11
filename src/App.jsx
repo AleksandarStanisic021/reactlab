@@ -1,9 +1,10 @@
-import ExampleOne from "./comps/ExampleOne";
+import React from "react";
+import "./index.css";
 
 const App = () => {
   return (
     <div>
-      <p>Hello, World! </p>
+      <h1>Quiz App</h1>
     </div>
   );
 };
