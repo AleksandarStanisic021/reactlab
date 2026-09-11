@@ -1,5 +1,3 @@
-import React from "react";
-
 const Movies = () => {
   const [movies, setMovies] = React.useState([
     { id: 1, title: "Inception", releaseYear: 2010 },
