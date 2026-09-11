@@ -1,4 +1,5 @@
 import React from "react";
+import Movies from "./comps/Movies";
 
 const App = () => {
   const [movie, setMovie] = React.useState({
@@ -14,54 +15,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Hello, World!</h1>
-      <p>Title: {movie.title}</p>
-      <p>Release Year: {movie.releaseYear}</p>
-      <button
-        onClick={() =>
-          setMovie({ ...movie, title: "The Matrix", releaseYear: 1999 })
-        }>
-        Change Movie
-      </button>
-      {movies.map((m) => (
-        <div key={m.id}>
-          <p>Title: {m.title}</p>
-          <p>Release Year: {m.releaseYear}</p>
-          button
-          <button
-            onClick={() =>
-              setMovies(
-                movies.map((movie) =>
-                  movie.id === m.id
-                    ? { ...movie, title: "Updated Title" }
-                    : movie,
-                ),
-              )
-            }>
-            Update Title
-          </button>
-          <button
-            onClick={() =>
-              setMovies(movies.filter((movie) => movie.id !== m.id))
-            }>
-            Delete Movie
-          </button>
-          <button
-            onClick={() =>
-              setMovies([
-                ...movies,
-                {
-                  key: movies.length + 1,
-                  id: movies.length + 1,
-                  title: "New Movie",
-                  releaseYear: 2020,
-                },
-              ])
-            }>
-            Add Movie
-          </button>
-        </div>
-      ))}
+      <Movies />
     </div>
   );
 };
