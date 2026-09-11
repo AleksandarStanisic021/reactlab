@@ -4,7 +4,7 @@ import "./index.css";
 const App = () => {
   return (
     <div className="app-container">
-      <p>Quiz App</p>
+      <h1>Quiz App</h1>
     </div>
   );
 };
