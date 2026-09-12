@@ -25,6 +25,7 @@ const Quiz = () => {
 
   const [UserAnswers, setUsersAnswers] = useState(initialAnswers);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [isFinished, setIsFinished] = useState(false);
 
   function HandleSelectOPtion(option) {
     const newAnswers = [...UserAnswers];
@@ -34,6 +35,9 @@ const Quiz = () => {
   }
 
   function gotoNext() {
+    if (currentQuestion === questionBank.length - 1) {
+      setIsFinished(true);
+    }
     if (currentQuestion < 2) setCurrentQuestion(currentQuestion + 1);
   }
 
@@ -43,7 +47,8 @@ const Quiz = () => {
 
   const selectesAnswer = UserAnswers[currentQuestion];
 
-  return <Results />;
+  if (isFinished)
+    return <Results UserAnswers={UserAnswers} questionBank={questionBank} />;
 
   return (
     <>
