@@ -20,11 +20,12 @@ const Quiz = () => {
     },
   ];
 
-  const [option, setOption] = useState("None");
+  const initialAnswers = [null, null, null];
 
-  function HandleSelectOPtion(option) {
-    setOption(option);
-  }
+  const [UserAnswers, setUsersAnswers] = useState(initialAnswers);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+
+  function HandleSelectOPtion(option) {}
 
   return (
     <>
@@ -42,7 +43,6 @@ const Quiz = () => {
         <button>Previous</button>
         <button>Next</button>
       </div>
-      <p>Selected {option}</p>
     </>
   );
 };
