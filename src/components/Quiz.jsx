@@ -50,7 +50,7 @@ const Quiz = () => {
         <button
           onClick={() => HandleSelectOPtion(option)}
           key={Math.random()}
-          className="option">
+          className={"option" + (selectesAnswer === option ? " selected" : "")}>
           {option}
         </button>
       ))}
@@ -60,7 +60,7 @@ const Quiz = () => {
         </button>
         <button
           onClick={gotoNext}
-          disabled={selectesAnswer === null || currentQuestion == 2}>
+          disabled={selectesAnswer === null || currentQuestion === 2}>
           Next
         </button>
       </div>
