@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Results from "../components/Results";
 
 const Quiz = () => {
   const questionBank = [
@@ -41,6 +42,8 @@ const Quiz = () => {
   }
 
   const selectesAnswer = UserAnswers[currentQuestion];
+
+  return <Results />;
 
   return (
     <>

@@ -1,4 +1,10 @@
 function Results() {
-  return <div>Res</div>;
+  return (
+    <div>
+      <h2>Quiz Completed</h2>
+      <p>Your Score : 23</p>
+      <button className="restart-button">Restart Quiz</button>
+    </div>
+  );
 }
 export default Results;
