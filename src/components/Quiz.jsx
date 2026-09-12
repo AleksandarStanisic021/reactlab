@@ -27,6 +27,12 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
 
+  function restat() {
+    setUsersAnswers(initialAnswers);
+    setCurrentQuestion(0);
+    isFinished(false);
+  }
+
   function HandleSelectOPtion(option) {
     const newAnswers = [...UserAnswers];
     newAnswers[currentQuestion] = option;
@@ -48,7 +54,13 @@ const Quiz = () => {
   const selectesAnswer = UserAnswers[currentQuestion];
 
   if (isFinished)
-    return <Results UserAnswers={UserAnswers} questionBank={questionBank} />;
+    return (
+      <Results
+        UserAnswers={UserAnswers}
+        questionBank={questionBank}
+        restat={restat}
+      />
+    );
 
   return (
     <>
