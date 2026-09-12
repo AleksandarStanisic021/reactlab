@@ -25,13 +25,25 @@ const Quiz = () => {
   const [UserAnswers, setUsersAnswers] = useState(initialAnswers);
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
-  function HandleSelectOPtion(option) {}
+  function HandleSelectOPtion(option) {
+    const newAnswers = [...UserAnswers];
+    newAnswers[currentQuestion] = option;
+    setCurrentQuestion(newAnswers);
+  }
+
+  function gotoNext() {
+    if (currentQuestion < 2) setCurrentQuestion(currentQuestion + 1);
+  }
+
+  function gotoPrev() {
+    if (currentQuestion > 0) setCurrentQuestion(currentQuestion - 1);
+  }
 
   return (
     <>
-      <h2>Question 1</h2>
-      <p className="question">{questionBank[0].question}</p>
-      {questionBank[0]["options"].map((option) => (
+      <h2>Question {currentQuestion + 1}</h2>
+      <p className="question">{questionBank[currentQuestion].question}</p>
+      {questionBank[currentQuestion]["options"].map((option) => (
         <button
           onClick={() => HandleSelectOPtion(option)}
           key={Math.random()}
@@ -40,8 +52,8 @@ const Quiz = () => {
         </button>
       ))}
       <div className="nav-buttons">
-        <button>Previous</button>
-        <button>Next</button>
+        <button onClick={gotoPrev}>Previous</button>
+        <button onClick={gotoNext}>Next</button>
       </div>
     </>
   );
