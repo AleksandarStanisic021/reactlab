@@ -58,10 +58,8 @@ const Quiz = () => {
         <button onClick={gotoPrev} disabled={currentQuestion === 0}>
           Previous
         </button>
-        <button
-          onClick={gotoNext}
-          disabled={selectesAnswer === null || currentQuestion === 2}>
-          Next
+        <button onClick={gotoNext} disabled={selectesAnswer === null}>
+          {currentQuestion === questionBank.length - 1 ? "Finish Quiz" : "Next"}
         </button>
       </div>
     </>
