@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 const Quiz = () => {
   const questionBank = [
@@ -19,12 +20,21 @@ const Quiz = () => {
     },
   ];
 
+  const [option, setOption] = useState("None");
+
+  function HandleSelectOPtion(option) {
+    setOption(option);
+  }
+
   return (
     <>
       <h2>Question 1</h2>
       <p className="question">{questionBank[0].question}</p>
       {questionBank[0]["options"].map((option) => (
-        <button key={Math.random()} className="option">
+        <button
+          onClick={() => HandleSelectOPtion(option)}
+          key={Math.random()}
+          className="option">
           {option}
         </button>
       ))}
@@ -32,6 +42,7 @@ const Quiz = () => {
         <button>Previous</button>
         <button>Next</button>
       </div>
+      <p>Selected {option}</p>
     </>
   );
 };
