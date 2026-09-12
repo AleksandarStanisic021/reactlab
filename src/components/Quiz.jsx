@@ -27,10 +27,10 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
 
-  function restat() {
+  function restart() {
     setUsersAnswers(initialAnswers);
     setCurrentQuestion(0);
-    isFinished(false);
+    setIsFinished(false);
   }
 
   function HandleSelectOPtion(option) {
@@ -58,7 +58,7 @@ const Quiz = () => {
       <Results
         UserAnswers={UserAnswers}
         questionBank={questionBank}
-        restat={restat}
+        restart={restart}
       />
     );
 
