@@ -40,6 +40,8 @@ const Quiz = () => {
     if (currentQuestion > 0) setCurrentQuestion(currentQuestion - 1);
   }
 
+  const selectesAnswer = UserAnswers[currentQuestion];
+
   return (
     <>
       <h2>Question {currentQuestion + 1}</h2>
@@ -53,8 +55,14 @@ const Quiz = () => {
         </button>
       ))}
       <div className="nav-buttons">
-        <button onClick={gotoPrev}>Previous</button>
-        <button onClick={gotoNext}>Next</button>
+        <button onClick={gotoPrev} disabled={currentQuestion === 0}>
+          Previous
+        </button>
+        <button
+          onClick={gotoNext}
+          disabled={selectesAnswer === null || currentQuestion == 2}>
+          Next
+        </button>
       </div>
     </>
   );
