@@ -28,7 +28,8 @@ const Quiz = () => {
   function HandleSelectOPtion(option) {
     const newAnswers = [...UserAnswers];
     newAnswers[currentQuestion] = option;
-    setCurrentQuestion(newAnswers);
+    setUsersAnswers(newAnswers);
+    console.log(newAnswers);
   }
 
   function gotoNext() {
